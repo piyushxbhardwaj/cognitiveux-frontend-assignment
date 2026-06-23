@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- SEO Meta Tags -->
+  <title>CognitiveUX.ai Front-End Internship Assignment Showcase</title>
+  <meta name="description" content="A premium production-ready portfolio showcasing pixel-perfect replica of ICICI Exclusive Privileges, YouTube Chapter Carousel, and accessible Lead Capture system.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧠</text></svg>">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/task1.css">
+  <link rel="stylesheet" href="css/task2.css">
+  <link rel="stylesheet" href="css/task3.css">
+</head>
+<body>
+
+  <!-- Sticky Header Navigation -->
+  <header class="header-nav" id="main-header">
+    <div class="nav-container">
+      <a href="#hero" class="nav-brand" id="brand-link">
+        <span>Cognitive</span>UX.ai
+      </a>
+      
+      <!-- Hamburger Menu Toggle (Mobile) -->
+      <button class="mobile-toggle" id="mobile-menu-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false" aria-controls="nav-menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+      </button>
+
+      <!-- Menu Links -->
+      <nav id="nav-menu">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active" id="nav-home">Home</a></li>
+          <li><a href="#task1" class="nav-link" id="nav-task1">Task 1 (Replica)</a></li>
+          <li><a href="#task2" class="nav-link" id="nav-task2">Task 2 (Chapters)</a></li>
+          <li><a href="#task3" class="nav-link" id="nav-task3">Task 3 (Lead Form)</a></li>
+          <li><a href="#architecture" class="nav-link" id="nav-arch">Architecture</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <!-- Theme Switcher -->
+        <button class="theme-toggle-btn" id="theme-toggle" aria-label="Switch Theme"></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <header class="hero-section" id="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text scroll-reveal">
+          <div class="badge brand-badge" style="margin-bottom: 16px;">CognitiveUX.ai Frontend Internship Assignment</div>
+          <h1>Frontend Engineering <span>Showcase Portal</span></h1>
+          <p>This portal showcases three tasks implemented with strict compliance: modular Vanilla JS/CSS3 layout engines, 3D hardware-accelerated transforms, heuristic algorithms, and keyboard-operable accessibility structures.</p>
+          
+          <div class="hero-badges">
+            <span class="badge">🛡️ HTML5 Semantics</span>
+            <span class="badge">🎨 Vanilla CSS3</span>
+            <span class="badge">⚙️ Vanilla JS (ES6+)</span>
+            <span class="badge">♿ WCAG 2.1 Compliant</span>
+            <span class="badge">📱 Mobile-First</span>
+          </div>
+          
+          <div class="hero-cta">
+            <a href="#task1" class="btn btn-primary" id="cta-start">View Task 1 Replica</a>
+            <a href="#architecture" class="btn btn-secondary" id="cta-arch">Review Architecture</a>
+          </div>
+        </div>
+        
+        <!-- Interactive Card Decoration -->
+        <div class="hero-mockup scroll-reveal reveal-delay-2">
+          <div class="floating-card">
+            <div class="card-chip"></div>
+            <div class="card-number">•••• •••• •••• 1200</div>
+            <div class="card-footer">
+              <div class="card-holder">
+                <h5>Card Holder</h5>
+                <p>COGNITIVE UX INTERN</p>
+              </div>
+              <div class="card-logo">PRIVILEGE</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- TASK 1: EXCLUSIVE PRIVILEGES SECTION -->
+    <section id="task1" class="exclusive scroll-reveal">
+      <div class="container p-0 p-md-3">
+        <h2 id="task1-title">Exclusive Privileges</h2>
+        
+        <!-- Vanilla 3D Coverflow Container -->
+        <div class="swiper-container" id="exclusive-swiper" tabindex="0" aria-label="Exclusive Privileges Cards Slider. Use left and right arrow keys to navigate.">
+          <div class="swiper-wrapper">
+            
+            <!-- Slide 3 (BookMyShow) -->
+            <div class="swiper-slide" role="group" aria-label="3 of 4">
+              <div class="slide slide3">
+                <h3>Enjoy Benefits</h3>
+                <p>worth up to <br>₹500/- off* <br>on your tickets.</p>
+                <img src="assets/bms.webp" alt="BookMyShow discount logo" width="226" height="67" loading="lazy">
+                <em>*available on selected cards</em>
+              </div>
+            </div>
+            
+            <!-- Slide 4 (Apple Offer) -->
+            <div class="swiper-slide" role="group" aria-label="4 of 4">
+              <div class="slide slide4">
+                <p>Avail</p>
+                <h3>APPLE OFFER</h3>
+                <p>with up to<br> ₹7,000/- off</p>
+              </div>
+            </div>
+            
+            <!-- Slide 1 (Ixigo) -->
+            <div class="swiper-slide" role="group" aria-label="1 of 4">
+              <div class="slide slide1">
+                <p>Get</p>
+                <h3>Activation voucher</h3>
+                <p>with <br>Flat ₹1,200/- off.</p>
+                <img src="assets/ixigo.webp" alt="Ixigo travel partner logo" width="138" height="64" loading="lazy">
+              </div>
+            </div>
+            
+            <!-- Slide 2 (Reliance Digital) -->
+            <div class="swiper-slide" role="group" aria-label="2 of 4">
+              <div class="slide slide2">
+                <p>Get</p>
+                <h3>Activation voucher</h3>
+                <p>with up to<br> ₹1,500/- off*.</p>
+                <img src="assets/reliance_digital.webp" alt="Reliance Digital partner logo" width="236" height="103" loading="lazy">
+              </div>
+            </div>
+            
+          </div>
+          
+          <!-- Slider Navigation controls -->
+          <button class="swiper-button-prev" id="slide-prev" aria-label="Previous Slide" aria-disabled="false"></button>
+          <button class="swiper-button-next" id="slide-next" aria-label="Next Slide" aria-disabled="false"></button>
+          
+          <!-- Slider Bullets Pagination (Mobile viewport) -->
+          <div class="swiper-pagination" id="slide-pagination" aria-label="Slider Pagination"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TASK 2: VIDEO CHAPTERS CAROUSEL & HEURISTICS GENERATOR -->
+    <section id="task2" class="scroll-reveal">
+      <div class="container">
+        <h2 class="section-title">Task 2 — Smart YouTube Chapters</h2>
+        <p class="section-subtitle">Click and play preselected videos in the carousel below to see time-synced chapters, or submit any YouTube URL to instantly generate timestamps using heuristic intervals.</p>
+        
+        <div class="task2-container">
+          <!-- Part A: Video Carousel Strip -->
+          <div class="video-carousel-section">
+            <div class="carousel-viewport-wrapper">
+              <button class="carousel-btn" id="carousel-prev" aria-label="Slide carousel left">
+                &#9664;
+              </button>
+              
+              <div class="carousel-viewport">
+                <div class="carousel-track" id="carousel-track">
+                  <!-- Carousel items dynamically loaded via task2.js -->
+                  <div class="skeleton skeleton-rect" style="width: 240px; height: 160px; border-radius: 8px;"></div>
+                  <div class="skeleton skeleton-rect" style="width: 240px; height: 160px; border-radius: 8px;"></div>
+                  <div class="skeleton skeleton-rect" style="width: 240px; height: 160px; border-radius: 8px;"></div>
+                </div>
+              </div>
+              
+              <button class="carousel-btn" id="carousel-next" aria-label="Slide carousel right">
+                &#9654;
+              </button>
+            </div>
+          </div>
+          
+          <!-- Player and Sync Chapters Grid -->
+          <div class="player-chapters-grid">
+            <div class="video-player-wrapper">
+              <!-- Placed inside wrapper for aspect ratio -->
+              <div id="task2-player"></div>
+            </div>
+            
+            <aside class="chapters-sidebar" aria-labelledby="sidebar-title">
+              <div class="chapters-header">
+                <h3 id="sidebar-title">📑 Playback Chapters</h3>
+              </div>
+              <ul class="chapters-list" id="chapters-list">
+                <!-- Chapters loaded dynamically -->
+                <li class="chapter-item skeleton-text skeleton" style="width: 80%; margin: 15px 20px;"></li>
+                <li class="chapter-item skeleton-text skeleton" style="width: 70%; margin: 15px 20px;"></li>
+                <li class="chapter-item skeleton-text skeleton" style="width: 90%; margin: 15px 20px;"></li>
+              </ul>
+            </aside>
+          </div>
+          
+          <!-- Part B: Chapter Generator Card -->
+          <div class="generator-card">
+            <h3>🤖 Automated Chapter Generator</h3>
+            <p class="instructions">Paste any standard YouTube video URL below. The client-side heuristic engine will parse the video ID, evaluate the duration from the API, analyze keywords in the title, and dynamically inject newly generated chapters into your active carousel.</p>
+            
+            <form id="generator-form" novalidate>
+              <div class="form-group-row">
+                <div class="form-input-wrapper">
+                  <input type="url" id="youtube-url-input" class="input-field" placeholder="https://www.youtube.com/watch?v=..." aria-label="YouTube Video Link" required>
+                  <div class="input-error-msg" id="url-error-msg"></div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-generate" id="generate-btn">
+                  <span class="spinner" aria-hidden="true"></span>
+                  <span class="btn-text">Generate Chapters</span>
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TASK 3: LEAD CAPTURE SYSTEM ON PLAYBACK -->
+    <section id="task3" class="scroll-reveal">
+      <div class="container">
+        <h2 class="section-title">Task 3 — Lead Capture Form Trigger</h2>
+        <p class="section-subtitle">Play the course video below. After exactly 6 seconds of cumulative watch time, a modal lead submission overlay will appear and automatically pause playback to avoid content disruption.</p>
+        
+        <div class="task3-player-wrapper">
+          <div id="task3-player"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ARCHITECTURE SUMMARY SECTION -->
+    <section id="architecture" class="scroll-reveal">
+      <div class="container">
+        <h2 class="section-title">Architectural Decisions</h2>
+        <p class="section-subtitle">A professional breakdown of implementation strategies, technology choices, and constraints guidelines applied in this codebase.</p>
+        
+        <div class="architecture-grid">
+          <div class="arch-card">
+            <div class="arch-icon">⚡</div>
+            <h3>Why Vanilla JS?</h3>
+            <p>Direct compliance with assignment constraints. Implemented dynamic rendering, events routing, and DOM binding from scratch without frameworks, resulting in an ultra-fast loading speed and zero vendor dependencies.</p>
+          </div>
+          
+          <div class="arch-card">
+            <div class="arch-icon">📁</div>
+            <h3>Separation of Concerns</h3>
+            <p>Organized in modular script and style files (separated by task scopes). CSS styles use thematic custom property variables allowing simple integration of light/dark modes with clean transitions.</p>
+          </div>
+          
+          <div class="arch-card">
+            <div class="arch-icon">🧩</div>
+            <h3>Heuristics vs APIs</h3>
+            <p>Since transcripts extraction or automated summarizing requires back-end API keys or server-side services (which violate constraints), a smart heuristics engine operates locally, dividing length and analyzing URL metadata.</p>
+          </div>
+          
+          <div class="arch-card">
+            <div class="arch-icon">🔐</div>
+            <h3>Session & Local Storage</h3>
+            <p>Lead records are saved long-term in local user databases (accessible on page refreshes), while the lead form display is deferred temporarily in sessionStorage, protecting playback experience from repeated pops.</p>
+          </div>
+          
+          <div class="arch-card">
+            <div class="arch-icon">♿</div>
+            <h3>WCAG Accessibility</h3>
+            <p>Focuses on full keyboard utility. Uses key handlers, outline focus rings, ARIA roles, and a strict JavaScript-managed focus trap within the modal to prevent navigation leaks to the background page.</p>
+          </div>
+          
+          <div class="arch-card">
+            <div class="arch-icon">🚀</div>
+            <h3>Performance Tuning</h3>
+            <p>Implemented debounced resizing, requestAnimationFrame loops for playback markers sync, CSS hardware-accelerated transforms rather than geometry shifts, and lazy cues for embedded players.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="container">
+      <div class="footer-logo"><span>Cognitive</span>UX.ai</div>
+      <p>Front-End Internship Assignment Portal • Designed &amp; Engineered by Candidate</p>
+      <p style="margin-top: 8px; font-size: 0.85rem; color: var(--text-muted);">Built using HTML5, CSS3, &amp; Vanilla JavaScript. Web Accessible.</p>
+    </div>
+  </footer>
+
+  <!-- TASK 3: LEAD CAPTURE MODAL DIALOG (HIDDEN BY DEFAULT) -->
+  <div class="modal-overlay" id="lead-capture-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-describedby="modal-desc">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h3 id="modal-title">Unlock Full Access</h3>
+        <p id="modal-desc">Please fill out this form to continue watching the masterclass course.</p>
+        <button class="modal-close-btn" id="modal-close" aria-label="Close Modal Dialog">
+          <svg viewBox="0 0 24 24">
+            <path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="modal-body">
+        <form class="lead-form" id="lead-form" novalidate>
+          
+          <div class="form-group">
+            <label class="form-label" for="lead-name">Full Name</label>
+            <input type="text" id="lead-name" class="input-field" placeholder="e.g. John Doe" required autocomplete="name">
+            <div class="input-error-msg"></div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="lead-email">Email Address</label>
+            <input type="email" id="lead-email" class="input-field" placeholder="e.g. john@company.com" required autocomplete="email">
+            <div class="input-error-msg"></div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="lead-phone">Phone Number</label>
+            <input type="tel" id="lead-phone" class="input-field" placeholder="e.g. 9876543210" required autocomplete="tel">
+            <div class="input-error-msg"></div>
+          </div>
+          
+          <div class="form-group">
+            <label class="form-label" for="lead-company">Company Name</label>
+            <input type="text" id="lead-company" class="input-field" placeholder="e.g. Acme Corporation" required autocomplete="organization">
+            <div class="input-error-msg"></div>
+          </div>
+          
+          <div class="modal-footer">
+            <button type="submit" class="lead-form-submit" id="submit-lead-btn">Submit &amp; Continue Watching</button>
+            <button type="button" class="remind-later-btn" id="modal-remind-later">Remind Me Later</button>
+          </div>
+          
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- YouTube IFrame API Script Loader -->
+  <script>
+    // Global ready function called by the YouTube player script
+    window.onYouTubeIframeAPIReady = function() {
+      if (window.App && typeof window.App.initTask2Player === "function") {
+        window.App.initTask2Player();
+      }
+      if (window.App && typeof window.App.initTask3Player === "function") {
+        window.App.initTask3Player();
+      }
+    };
+  </script>
+  <script src="https://www.youtube.com/iframe_api" async></script>
+  
+  <!-- Task Scripts -->
+  <script src="js/main.js"></script>
+  <script src="js/task1.js"></script>
+  <script src="js/task2.js"></script>
+  <script src="js/task3.js"></script>
+</body>
+</html>

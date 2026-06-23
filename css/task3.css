@@ -1,0 +1,226 @@
+/* ==========================================================================
+   TASK 3 STYLE SHEET (task3.css)
+   Contains: Modal dialog overlay, backdrop-blur properties, glassmorphism card layout,
+   validation error states, accessibility rings, and entrance animations.
+   ========================================================================== */
+
+/* --- Embed Player Frame --- */
+.task3-player-wrapper {
+  max-width: 800px;
+  margin: 0 auto 32px auto;
+  box-shadow: var(--card-shadow);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+  aspect-ratio: 16/9;
+  position: relative;
+  background-color: #000;
+}
+
+.task3-player-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* --- Modal Dialog Overlay --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--overlay-bg);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.4s ease, visibility 0.4s ease;
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* --- Glassmorphic Card Dialog --- */
+.modal-dialog {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  width: 100%;
+  max-width: 440px;
+  border-radius: var(--border-radius-md);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  position: relative;
+  transform: scale(0.9) translateY(20px);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.15);
+  overflow: hidden;
+}
+
+.modal-overlay.active .modal-dialog {
+  transform: scale(1) translateY(0);
+}
+
+/* Glassmorphism styling overrides for Dark Mode */
+[data-theme="dark"] .modal-dialog {
+  background: rgba(24, 24, 27, 0.8);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* --- Modal Header --- */
+.modal-header {
+  padding: 24px 24px 16px 24px;
+  border-bottom: 1px solid var(--border-color);
+  position: relative;
+}
+
+.modal-header h3 {
+  font-size: 1.4rem;
+  color: var(--text-heading);
+  margin-bottom: 6px;
+}
+
+.modal-header p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+/* Corner Close Button */
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--text-muted);
+  transition: var(--transition-smooth);
+}
+
+.modal-close-btn:hover {
+  background-color: var(--border-color);
+  color: var(--text-heading);
+}
+
+.modal-close-btn svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+/* --- Modal Body & Form Elements --- */
+.modal-body {
+  padding: 24px;
+}
+
+.lead-form .form-group {
+  margin-bottom: 18px;
+}
+
+.lead-form .form-label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 6px;
+}
+
+.lead-form .input-field {
+  width: 100%;
+  padding: 10px 14px;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.lead-form .input-field:focus {
+  border-color: var(--color-primary);
+  background-color: var(--bg-card);
+  box-shadow: 0 0 0 3px rgba(227, 83, 15, 0.15);
+}
+
+.lead-form .input-field.input-error {
+  border-color: #ef4444;
+}
+
+.lead-form .input-error-msg {
+  color: #ef4444;
+  font-size: 0.75rem;
+  margin-top: 4px;
+  display: none;
+}
+
+/* --- Modal Footer & Actions --- */
+.modal-footer {
+  padding: 16px 24px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  border-top: 1px solid var(--border-color);
+}
+
+.lead-form-submit {
+  width: 100%;
+  padding: 12px;
+  background-color: var(--color-primary);
+  color: #ffffff;
+  border: none;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.lead-form-submit:hover {
+  background-color: var(--color-secondary);
+}
+
+.lead-form-submit:focus {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+.remind-later-btn {
+  background: none;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 10px;
+  border-radius: var(--border-radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  width: 100%;
+  text-align: center;
+}
+
+.remind-later-btn:hover {
+  background-color: var(--border-color);
+}
+
+/* Keyboard Outline Focus Style */
+.input-field:focus-visible,
+.remind-later-btn:focus-visible,
+.modal-close-btn:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}

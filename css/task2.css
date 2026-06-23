@@ -1,0 +1,375 @@
+/* ==========================================================================
+   TASK 2 STYLE SHEET (task2.css)
+   Contains: YouTube responsive frame container, interactive chapter items,
+   horizontal video carousel, and generator input forms.
+   ========================================================================== */
+
+/* --- Task Wrapper Layout --- */
+.task2-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+/* --- Part A: Video Carousel Navigation --- */
+.video-carousel-section {
+  position: relative;
+  margin-bottom: 24px;
+}
+
+.carousel-viewport-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+}
+
+.carousel-viewport {
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+  padding: 8px 0;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+  will-change: transform;
+}
+
+/* Video Thumbnail Items */
+.video-thumbnail-item {
+  flex: 0 0 240px; /* fixed width for thumbs */
+  background-color: var(--bg-card);
+  border: 2px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  padding: 8px;
+  cursor: pointer;
+  transition: var(--transition-spring);
+  text-align: left;
+  user-select: none;
+}
+
+.video-thumbnail-item:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-sm);
+}
+
+.video-thumbnail-item.active {
+  border-color: var(--color-primary);
+  background-color: rgba(227, 83, 15, 0.05);
+  box-shadow: 0 4px 12px rgba(227, 83, 15, 0.15);
+}
+
+.thumb-image-wrapper {
+  position: relative;
+  aspect-ratio: 16/9;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  background-color: #000;
+}
+
+.thumb-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.video-thumbnail-item:hover img {
+  transform: scale(1.05);
+}
+
+.thumb-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 4px;
+}
+
+.thumb-duration {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+/* Carousel Control Buttons */
+.carousel-btn {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+  color: var(--text-main);
+  z-index: 5;
+  flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+  background-color: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+.carousel-btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --- Main Player & Chapter Grid --- */
+.player-chapters-grid {
+  display: grid;
+  grid-template-columns: 1.6fr 0.9fr;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+
+/* Responsive YouTube Embed */
+.video-player-wrapper {
+  background-color: #000;
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+  box-shadow: var(--card-shadow);
+  border: 1px solid var(--border-color);
+  position: relative;
+  aspect-ratio: 16/9;
+}
+
+.video-player-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Chapters Sidebar */
+.chapters-sidebar {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 480px; /* Match height of 16/9 player on large screens */
+  overflow: hidden;
+}
+
+.chapters-header {
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border-color);
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+.chapters-header h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.chapters-list {
+  list-style: none;
+  overflow-y: auto;
+  padding: 8px 0;
+  flex-grow: 1;
+}
+
+/* Individual Chapter Nav Items */
+.chapter-item {
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  border-left: 3px solid transparent;
+}
+
+.chapter-item:hover {
+  background-color: var(--bg-main);
+}
+
+.chapter-item.active {
+  background-color: rgba(227, 83, 15, 0.05);
+  border-left-color: var(--color-primary);
+}
+
+.chapter-time {
+  font-family: var(--font-headings);
+  font-weight: 700;
+  color: var(--color-primary);
+  font-size: 0.9rem;
+  background-color: rgba(227, 83, 15, 0.1);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.chapter-title {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-main);
+  transition: var(--transition-smooth);
+}
+
+.chapter-item.active .chapter-title {
+  font-weight: 700;
+  color: var(--text-heading);
+}
+
+.chapter-item.active .chapter-title::before {
+  content: "▶";
+  color: var(--color-primary);
+  font-size: 0.75rem;
+  margin-right: 6px;
+  display: inline-block;
+  animation: pulsePlay 1.5s infinite;
+}
+
+@keyframes pulsePlay {
+  0% { transform: scale(1); opacity: 0.7; }
+  50% { transform: scale(1.2); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.7; }
+}
+
+/* Empty State */
+.chapters-empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 200px;
+  padding: 24px;
+  text-align: center;
+  color: var(--text-muted);
+}
+
+.chapters-empty-state svg {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 16px;
+  fill: currentColor;
+}
+
+/* --- Part B: Chapter Generator Box --- */
+.generator-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+}
+
+.generator-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+}
+
+.generator-card p.instructions {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.form-group-row {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+
+.form-input-wrapper {
+  flex-grow: 1;
+}
+
+.input-field {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  color: var(--text-main);
+  outline: none;
+  transition: var(--transition-smooth);
+}
+
+.input-field:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(227, 83, 15, 0.15);
+  background-color: var(--bg-card);
+}
+
+.input-error-msg {
+  color: #ef4444;
+  font-size: 0.8rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.btn-generate {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+}
+
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: none;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.generating .spinner {
+  display: block;
+}
+
+.generating .btn-text {
+  display: none;
+}
+
+/* --- Responsive Adaptations --- */
+@media screen and (max-width: 991px) {
+  .player-chapters-grid {
+    grid-template-columns: 1fr;
+  }
+  .chapters-sidebar {
+    max-height: 350px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .video-thumbnail-item {
+    flex: 0 0 200px;
+  }
+  .form-group-row {
+    flex-direction: column;
+  }
+  .btn-generate {
+    width: 100%;
+  }
+  .generator-card {
+    padding: 20px;
+  }
+}
