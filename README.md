@@ -9,6 +9,14 @@
 Visit the live interactive showcase page here:
 👉 **[Live Project Demonstration URL](https://piyushxbhardwaj.github.io/cognitiveux-frontend-assignment/)**
 
+## 📌 Key Highlights
+* 💎 **Pixel-Perfect ICICI Bank Replica:** Replicates exact CSS spacing, Mulish typography, colors, and border shapes.
+* 🚀 **Pure Vanilla Implementation:** Built entirely in HTML5, CSS3, and ES6+ JS with zero external dependencies.
+* ⚙️ **Custom 3D Coverflow Engine:** Recalculates angled transforms, z-index depth, and captures touch swipes manually.
+* ♿ **WCAG 2.1 AA Accessibility:** Focus trapping inside active modals, Escape key dismissals, and high contrast rings.
+* 🌗 **Smooth Theme Switcher:** Light/dark variable modes with lag-free transition timings.
+* 🔐 **Lead Capture Core:** Integrates playhead watching triggers, form validators, and dual browser storage logs.
+
 ---
 
 # Project Overview
@@ -178,8 +186,21 @@ To ensure production-grade stability without relying on external testing framewo
 
 # Setup Instructions
 
-1. **Download the source directory.**
+### Quick Start (Terminal)
+```bash
+# 1. Clone this repository
+git clone https://github.com/piyushxbhardwaj/cognitiveux-frontend-assignment.git
+
+# 2. Enter the project root directory
+cd cognitiveux-frontend-assignment
+
+# 3. Start a local HTTP server (Python)
+python -m http.server 8000
+```
+
+### Manual Installation
+1. **Clone or download the source directory.**
 2. **Initialize a local HTTP server** to satisfy browser security (CORS) rules for YouTube player scripts:
    * **Python:** Run `python -m http.server 8000` in the root folder, and visit `http://localhost:8000`.
    * **Node.js:** Run `npx serve .` or use any static hosting package.
-3. **Navigate to the address** in your web browser.
+3. **Open your web browser** and navigate to `http://localhost:8000`.
