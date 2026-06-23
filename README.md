@@ -1,3 +1,16 @@
+# CognitiveUX.ai Frontend Assignment Showcase
+
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES6+-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Accessibility](https://img.shields.io/badge/WCAG-2.1_AA-success?style=for-the-badge)
+
+## 🔗 Live Demo
+Visit the live interactive showcase page here:
+👉 **[Live Project Demonstration URL](https://piyushxbhardwaj.github.io/cognitiveux-frontend-assignment/)**
+
+---
+
 # Project Overview
 
 This repository contains the complete implementation of the CognitiveUX.ai Front-End Internship Assignment. It showcases a production-ready, highly polished, single-page application built strictly with HTML5, CSS3, and Vanilla JavaScript (ES6+).
@@ -61,6 +74,32 @@ cognitiveux-assignment/
 
 ---
 
+# Screenshots & Demo Videos
+
+### Demo Videos
+* 🎬 [Full Showcase Walkthrough (MP4)](./screenshots/walkthrough_demo.mp4) — Demonstrates carousel swipes, playback tracking, modal focus traps, and theme switches.
+* 🎬 [Task 1 Slider Gestures (MP4)](./screenshots/task1_replica_demo.mp4) — Shows Coverflow translations and mouse/touch drag offsets.
+
+### Showcase Screenshots
+
+#### Home Page (Light & Dark Theme)
+![Home Page Light Mode](./screenshots/home_light_mode.png)
+![Home Page Dark Mode](./screenshots/home_dark_mode.png)
+
+#### Task 1: Exclusive Privileges Replica Comparison
+*Original Landing Page:*
+![ICICI Original privileges section](./screenshots/task1_original.png)
+*Our Replicated Section:*
+![Task 1 Replicated Section](./screenshots/task1_replica.png)
+
+#### Task 2: Chapter Sync & Heuristic Generator
+![Task 2 Video Chapters](./screenshots/task2_chapters.png)
+
+#### Task 3: Glassmorphism Lead Capture Dialog
+![Task 3 Lead Capture Modal](./screenshots/task3_lead_modal.png)
+
+---
+
 # Architecture Decisions
 
 * **Modularity:** Separating each task's layout properties (CSS) and triggers (JS) prevents cross-contamination of styles, making the codebase highly scalable and manageable.
@@ -111,6 +150,7 @@ Directly complies with WCAG 2.1 AA benchmarks:
 
 * The custom YouTube URLs supplied during Task 2 testing support embedding. (Private or geoblocked video links may trigger player warning grids).
 * The default typography relies on Google Fonts (Mulish and Inter). If the host lacks internet access, the typography degrades to Arial and system-ui fallbacks.
+* **Asset Naming Typo:** We retained the original file names `privilages_bg1.webp` through `privilages_bg4.webp` (including their original spelling typo of 'privilege' as 'privilage') to align exactly with the original ICICI campaign page asset URLs and structures.
 
 # Testing Strategy
 
