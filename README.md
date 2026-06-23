@@ -7,7 +7,7 @@
 
 ## 🔗 Live Demo
 Visit the live interactive showcase page here:
-👉 **[Live Project Demonstration URL](https://piyushxbhardwaj.github.io/cognitiveux-frontend-assignment/)**
+👉 **[CognitiveUX Frontend Assignment Live Demo](https://cognitiveux-frontend-assignment.vercel.app/)**
 
 ## 📌 Key Highlights
 * 💎 **Pixel-Perfect ICICI Bank Replica:** Replicates exact CSS spacing, Mulish typography, colors, and border shapes.
